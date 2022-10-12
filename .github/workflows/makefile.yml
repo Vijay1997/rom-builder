@@ -12,21 +12,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses : wget http://dl.google.com/android/android-sdk_r18-linux.tgz
+     run: wget http://dl.google.com/android/android-sdk_r18-linux.tgz
 
-    - uses: tar -zxf android-sdk_r18-linux.tgz
-
-  
-
-    - uses : export ANDROID_HOME=~/builds/[github username]/[your project name]/android-sdk-linux
-
-    - uses: export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+     run: tar -zxf android-sdk_r18-linux.tgz
 
   
 
+     run: export ANDROID_HOME=~/builds/[github username]/[your project name]/android-sdk-linux
+
+     run: export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+
+  
 
 
-    - uses: android update sdk --filter 1,2,9 --no-ui --force
+
+     run: android update sdk --filter 1,2,9 --no-ui --force
     - uses: actions/checkout@v3
     - name: configure
 
